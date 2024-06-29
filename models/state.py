@@ -15,9 +15,10 @@ class State(BaseModel, Base):
     else:
         @property
         def cities(self):
+            """Get list of all cities"""
             from models import storage, City
             cities = []
-            from city storage.all(City).value():
+            for city in storage.all(City).value():
                 if city.state_id == self.id:
                     cities.append(city)
                 return cities
